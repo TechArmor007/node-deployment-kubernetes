@@ -1,7 +1,7 @@
 # Build Stage
 FROM node:14 AS build
 
-# Set the working directory in the container
+# Working Directory
 WORKDIR /code
 
 # Copy the application source code
@@ -17,15 +17,14 @@ RUN npm install
 # Prod Stage
 FROM node:14-slim
 
-# Set the working directory in the container
+# Working Directory
 WORKDIR /code
 
-# Copy built node modules and build artifacts from the builder stage
+# Copy built node modules and build artifacts from the build stage
 COPY --from=build /code .
 
 # Expose the port the app runs on
 EXPOSE 3000
 
-# Define the command to run the application
-#CMD ["node", "index.js"]
+# Command to run the application
 CMD npm start
