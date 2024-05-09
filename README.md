@@ -73,5 +73,10 @@ Because ArgoCD's server by default uses HTTPS, make sure to use https:// instead
 
 Snapshots of Deployment
 
-
+![Image Description 1](images/1.png)
+![Image Description 2](images/2.png)
+![Image Description 3](images/3.png)
+![Image Description 4](images/4.png)
+![Image Description 5](images/5.png)
+![Image Description 6](images/6.png)
 
