@@ -22,7 +22,7 @@ Step3: Install Docker (For Ubuntu):
 	sudo systemctl enable docker	
 	sudo chmod 777 /var/run/docker.sock
 ```	
-Step4: Install Minikube (For Ubuntu):
+Step4: Install Minikube (For Ubuntu) and wait for while after running minikube start:
 ```
  	curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 	sudo install minikube-linux-amd64 /usr/local/bin/minikube
@@ -47,13 +47,19 @@ Step7: Deploy on ArgoCD
 	kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
-Step8: ArgoCD Dashboard Password (Username - admin) for password run
+Step8: Setting up the application on ArgoCD
+```
+	cd node-deployment-kubernetes/
+	kubectl apply -f node-hello-argocd.yaml
+```
+
+Step9: ArgoCD Dashboard Password (Username - admin) for password run and copy the passowrd
 ```
 	kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode
 ```
 
-Step9: Access Dashboard
-For localhost Use "https://localhost:8080"
+Step10: Access Dashboard
+for localhost Use "https://localhost:8080"
 ```
 	kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
@@ -64,3 +70,8 @@ For EC2 Server Use "https://publicIP:8080"
 ```
 
 Because ArgoCD's server by default uses HTTPS, make sure to use https:// instead of http:// when accessing it through the browser. Remember to accept the security exception in your browser due to the use of a self-signed certificate by ArgoCD.
+
+Snapshots of Deployment
+
+
+
