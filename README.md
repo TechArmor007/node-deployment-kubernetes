@@ -10,7 +10,7 @@ Step2: To Test Docker Image
 ```
         docker pull techarmor007/node-hello:latest
         docker run -it -d -p 3000:3000 techarmor007/node-hello:latest
-	Run "http://locahost:3000" on browser
+	Run "http://localhost:3000" on browser
 ```
 	
 Step3: Install Docker (For Ubuntu):
