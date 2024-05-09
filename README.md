@@ -2,7 +2,9 @@
 Task: Dockerize and deploy a Node.js "Hello World" application on Kubernetes
 
 Step1: Clone the repository
-	```git clone https://github.com/TechArmor007/node-deployment-kubernetes.git```
+```
+ 	git clone https://github.com/TechArmor007/node-deployment-kubernetes.git
+```
 
 Step2: To Test Docker Image
         docker pull techarmor007/node-hello:latest
